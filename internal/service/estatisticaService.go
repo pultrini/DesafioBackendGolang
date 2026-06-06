@@ -28,8 +28,7 @@ func (s *EstatisticaService) Calcular() model.EstatisticaResponse {
 	agora := time.Now()
 
 	for _, t := range todasTransacoes {
-		count++
-		sum += t.Valor
+		
 		tempoDecorrido := agora.Sub(t.DataHora)
 		if tempoDecorrido >= 0 && tempoDecorrido <= s.janelaService {
 			count++
